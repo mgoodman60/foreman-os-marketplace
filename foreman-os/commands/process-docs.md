@@ -1,7 +1,7 @@
 ---
 description: Process project documents to extract intelligence for daily reports
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
-argument-hint: [document type or filename]
+argument-hint: [document type, filename, or "scan"]
 ---
 
 Process new or updated project documents. Extracts intelligence and merges it into the existing project data without overwriting what's already there. Designed for both initial bulk processing (after `/set-project`) and incremental updates (single new document added to a folder).
@@ -19,8 +19,6 @@ If not found, tell the user: "No project is set up yet. Run `/set-project` first
 If found, load it and check the `documents_loaded` array to see what's already been processed.
 
 ## Step 2: Identify What to Process
-
-This command does NOT scan folders — that's what `/update` is for. Instead, it processes documents the user explicitly provides.
 
 ### Mode A: Specific file or type (`/process-docs ASI-003.pdf` or `/process-docs schedule`)
 
@@ -44,7 +42,39 @@ If no arguments and no uploaded file:
   - "Drag a file into this chat"
   - "Tell me a filename: `/process-docs ASI-003.pdf`"
   - "Tell me a document type: `/process-docs schedule`"
-  - "Run `/update` first to see what's new in your folders"
+  - "Run `/process-docs scan` to see what's new in your folders"
+
+### Mode D: Scan (`/process-docs scan`)
+
+Lightweight folder scan. Compares what's in the project folders against what's already been processed. Reports what's new, what's changed, and what's ready to process. Does NOT extract or process any documents — just looks and reports.
+
+1. **Load folder_mapping and documents_loaded** from `project-config.json`
+2. **Walk every mapped folder** — list all supported file types (`.pdf`, `.xlsx`, `.xls`, `.csv`, `.docx`, `.doc`). Record filename, full path, file size, and parent folder.
+3. **Compare against documents_loaded**:
+   - Not in documents_loaded → **NEW**
+   - Same filename and file size → **UNCHANGED**
+   - Same filename, different file size → **UPDATED**
+4. **Present scan report** grouped by status:
+
+   > **Project Update Scan — [Project Name]**
+   > *Last full scan: [date] · [X] documents on file*
+   >
+   > **New Files (3):**
+   > 1. `ASI-003_Window_Revision.pdf` (480 KB) — in `08 - Change Orders/` — Likely: ASI
+   > 2. `Submittal_08-1000_Doors.pdf` (2.1 MB) — in `06 - Submittals/` — Likely: submittal package
+   >
+   > **Updated Files (1):**
+   > 3. `CPM_Schedule.pdf` — in `09 - Schedule/` — was 2.3 MB, now 2.8 MB
+   >
+   > **Unchanged: [X] files** — already processed, no changes detected.
+   >
+   > Tell me which files to process, or say "all new" to process everything that's new.
+
+   If nothing's new: "All [X] documents are up to date. Your project intelligence is current."
+
+   If no documents have been processed yet: list all files grouped by folder and recommend starting with specs and schedule.
+
+This scan is read-only — safe to run as often as needed.
 
 ### Duplicate Check
 

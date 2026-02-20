@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-This is **foreman-os-marketplace**, a cowork plugin marketplace repository containing the **Foreman_OS** plugin (v4.0.2) — a construction superintendent operating system with 41 skills, 40 commands, and 21 field-reference documents. It runs as a plugin inside the cowork platform.
+This is **foreman-os-marketplace**, a cowork plugin marketplace repository containing the **Foreman_OS** plugin (v4.0.2) — a construction superintendent operating system with 41 skills, 36 commands, and 21 field-reference documents. It runs as a plugin inside the cowork platform.
 
 ## Repository Structure
 
@@ -13,7 +13,7 @@ This is **foreman-os-marketplace**, a cowork plugin marketplace repository conta
 foreman-os/                        — The plugin itself
   .claude-plugin/plugin.json       — Plugin metadata (name, version, description)
   README.md                        — Full documentation of commands, skills, and data files
-  commands/                        — 40 slash-command definitions (markdown files)
+  commands/                        — 36 slash-command definitions (markdown files)
   skills/                          — 41 skill directories, each with SKILL.md + references/
 ```
 

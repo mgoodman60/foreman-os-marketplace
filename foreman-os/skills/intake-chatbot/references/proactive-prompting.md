@@ -38,7 +38,7 @@ If by mid-afternoon (or after 5+ entries) the following are missing:
 - If no weather logged: "What was the weather like today?"
 
 ### End of Day (after 4 PM)
-- If user logs something: "Almost done for the day? Run /review-log to see what you've got, or /daily-report when you're ready."
+- If user logs something: "Almost done for the day? Run /daily-report when you're ready — it'll show you a summary of what's logged before generating."
 
 ## Intelligence-Driven Prompting
 

@@ -1,7 +1,7 @@
 ---
 description: Log field observations throughout the day via conversational intake
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
-argument-hint: [what happened on site]
+argument-hint: [what happened on site | clear]
 ---
 
 Accept conversational field input from the superintendent and log it to a running daily intake file. This is the primary way field data enters the system throughout the day.
@@ -21,7 +21,20 @@ Search for project-data files in the user's working directory (check `AI - Proje
 
 This context powers auto-classification and enrichment. If no config exists, still accept the log entry — just skip the enrichment step.
 
-## Step 2: Accept Input
+## Step 2: Check for Clear Action
+
+If `$ARGUMENTS` is "clear", clear today's intake log instead of logging a new entry:
+
+1. Read `daily-report-intake.json`. If it doesn't exist or has no entries for today, tell the user: "No entries to clear — today's log is already empty." Exit.
+2. Show the user what will be cleared: number of entries, time range, brief summary of sections covered.
+3. Ask: "Clear [X] entries from today's log? They'll be archived in case you need them."
+4. If confirmed, archive the current entries to `daily-report-intake-archive-{YYYY-MM-DD}-{HHmmss}.json` in `folder_mapping.ai_output` (or working directory root).
+5. Reset `daily-report-intake.json` to `{ "date": "[today]", "entries": [] }`.
+6. Confirm: "Log cleared. [X] entries archived to [filename]. Start logging with `/log`."
+7. Log in `project-config.json` version_history: `[TIMESTAMP] | log | clear | Cleared X entries, archived to [filename]`
+8. Exit.
+
+## Step 3: Accept Input
 
 The user will provide field observations as natural language. They might say anything from a quick note to a detailed dump of what happened. Examples:
 
@@ -33,7 +46,7 @@ The user will provide field observations as natural language. They might say any
 
 If the user provided input as an argument ($ARGUMENTS), process it directly. If no arguments, ask: "What's happening on site?"
 
-## Step 3: Classify and Structure
+## Step 4: Classify and Structure
 
 Using the intake-chatbot skill's classification rules, identify which daily report sections the input belongs to:
 
@@ -49,7 +62,7 @@ Using the intake-chatbot skill's classification rules, identify which daily repo
 
 A single user message may contain information for multiple sections. Parse and classify each piece separately.
 
-## Step 4: Enrich with Project Intelligence
+## Step 5: Enrich with Project Intelligence
 
 If project intelligence is loaded:
 - Match sub names to the directory from `directory.json` (subcontractors array, fuzzy match casual references)
@@ -58,7 +71,7 @@ If project intelligence is loaded:
 - Note any weather threshold implications from `specs-quality.json` (weather_thresholds)
 - Cross-reference schedule milestones from `schedule.json`
 
-## Step 5: Save to Intake Log
+## Step 6: Save to Intake Log
 
 Save the classified and enriched entry to `daily-report-intake.json` in the user's working directory. The intake log is a running list of timestamped entries for the current day:
 
@@ -87,7 +100,7 @@ Save the classified and enriched entry to `daily-report-intake.json` in the user
 
 If the intake file already exists for today, append to the entries array. If it's a new day, start fresh (but preserve yesterday's file as `daily-report-intake-{YYYY-MM-DD}.json` if it wasn't consumed by /daily-report yet).
 
-## Step 6: Confirm
+## Step 7: Confirm
 
 Give a brief confirmation that shows how the input was classified:
 
@@ -95,7 +108,7 @@ Give a brief confirmation that shows how the input was classified:
 
 Keep confirmations short and conversational. The user is in the field and doesn't want to read a novel.
 
-## Step 7: Save & Log
+## Step 8: Save & Log
 1. Update `project-config.json` version_history:
    ```
    [TIMESTAMP] | log | intake | [count of entries added today]
