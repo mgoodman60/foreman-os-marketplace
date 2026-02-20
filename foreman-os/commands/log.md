@@ -6,7 +6,7 @@ argument-hint: [what happened on site | clear]
 
 Accept conversational field input from the superintendent and log it to a running daily intake file. This is the primary way field data enters the system throughout the day.
 
-Read the intake-chatbot skill at `${CLAUDE_PLUGIN_ROOT}/skills/intake-chatbot/SKILL.md` and the project-data skill at `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` before proceeding.
+Read the intake-chatbot skill at `${CLAUDE_PLUGIN_ROOT}/skills/intake-chatbot/SKILL.md` and the project-data skill at `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` before proceeding. If the user includes or references site photos, also read `${CLAUDE_PLUGIN_ROOT}/skills/photo-documentation/SKILL.md` for photo classification and documentation standards.
 
 ## Step 1: Load Context
 

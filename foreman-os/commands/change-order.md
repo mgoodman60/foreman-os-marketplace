@@ -18,6 +18,7 @@ Auto-populates project data, manages CO numbering, tracks cost and schedule impa
 ## Skills Referenced
 - `${CLAUDE_PLUGIN_ROOT}/skills/change-order-tracker/SKILL.md` — Core CO lifecycle management, numbering, status workflow, cost/schedule tracking
 - `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project configuration, folder structure, team assignments
+- `${CLAUDE_PLUGIN_ROOT}/skills/estimating-intelligence/SKILL.md` — Unit cost validation and pricing review for change order cost evaluation
 
 **Output Skills**: See the `docx` Cowork skill for .docx report generation best practices.
 

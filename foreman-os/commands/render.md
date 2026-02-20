@@ -6,7 +6,7 @@ argument-hint: [type] [options]
 
 Generate architectural renderings using AI image generation, guided by project data and visual context.
 
-Read the rendering-generator skill at `${CLAUDE_PLUGIN_ROOT}/skills/rendering-generator/SKILL.md` before proceeding.
+Read the rendering-generator skill at `${CLAUDE_PLUGIN_ROOT}/skills/rendering-generator/SKILL.md` before proceeding. Also read `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` for project data retrieval patterns. If the MCP image generation server is available, also read `${CLAUDE_PLUGIN_ROOT}/skills/image-generation-mcp/SKILL.md` for AI image generation capabilities.
 
 ## Step 1: Load Data
 

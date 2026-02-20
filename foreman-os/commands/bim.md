@@ -14,7 +14,7 @@ BIM coordination management for construction superintendents. Track clash detect
 - `${CLAUDE_PLUGIN_ROOT}/skills/bim-coordination/SKILL.md` — Full BIM coordination system: clash detection workflows, model-to-field verification, 4D scheduling, laser scanning, drone surveys, digital twin closeout, LOD specifications, data model
 - `${CLAUDE_PLUGIN_ROOT}/skills/bim-coordination/references/bim-field-guide.md` — Field reference: model viewer controls, clash report reading, field measurement methods, common model issues, coordination meeting checklist, LOD quick reference, AR tools, scan-to-BIM verification
 - `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project configuration and data context
-- `${CLAUDE_PLUGIN_ROOT}/skills/rfi-tracker/SKILL.md` — RFI tracking for clash-driven RFIs
+- `${CLAUDE_PLUGIN_ROOT}/skills/rfi-preparer/SKILL.md` — RFI tracking for clash-driven RFIs
 
 **Output Skills**: See the `docx` Cowork skill for .docx report generation best practices.
 

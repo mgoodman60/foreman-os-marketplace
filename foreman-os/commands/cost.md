@@ -13,6 +13,7 @@ Comprehensive project cost management for construction superintendents and proje
 ## Skills Referenced
 - `${CLAUDE_PLUGIN_ROOT}/skills/cost-tracking/SKILL.md` — Full cost tracking system: budget structure, CPI calculation, variance analysis, invoice reconciliation, change order cost impact, cash flow, contingency tracking
 - `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project configuration and data context
+- `${CLAUDE_PLUGIN_ROOT}/skills/estimating-intelligence/SKILL.md` — Unit cost validation, productivity rates, and bid review (if cost estimating or pricing validation is needed)
 
 **Output Skills**: See the `docx` Cowork skill for .docx report generation best practices.
 

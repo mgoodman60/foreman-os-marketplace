@@ -6,7 +6,7 @@ argument-hint: [section-name]
 
 Generate a comprehensive Project Data Intelligence HTML dashboard showing ALL extracted project data with interactive tools.
 
-Read the project-data-intel skill at `${CLAUDE_PLUGIN_ROOT}/skills/project-data-intel/SKILL.md` before proceeding.
+Read the project-data-intel skill at `${CLAUDE_PLUGIN_ROOT}/skills/project-data-intel/SKILL.md` before proceeding. Also read `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` for project data retrieval patterns.
 
 ## Step 1: Load ALL Data
 

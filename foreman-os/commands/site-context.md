@@ -6,7 +6,7 @@ argument-hint: [site|interior|photos|all]
 
 Gather visual context about the project site and interior design intent for use in AI-rendered architectural visualizations.
 
-Read the project-visual-context skill at `${CLAUDE_PLUGIN_ROOT}/skills/project-visual-context/SKILL.md` before proceeding.
+Read the project-visual-context skill at `${CLAUDE_PLUGIN_ROOT}/skills/project-visual-context/SKILL.md` before proceeding. Also read `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` for project data retrieval patterns.
 
 ## Step 1: Load Existing Data
 

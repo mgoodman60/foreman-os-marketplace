@@ -11,6 +11,10 @@ This command manages punch list items throughout the project lifecycle. Track de
 
 **Output Skills**: See the `docx` Cowork skill for .docx report generation best practices.
 
+## Skills Referenced
+- `${CLAUDE_PLUGIN_ROOT}/skills/punch-list/SKILL.md` — Punch item schema, status workflow, back-charge tracking
+- `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project configuration and data context
+
 ## Quick Start
 
 ```

@@ -8,6 +8,13 @@ argument-hint: [status | add | commission | warranty | checklist | generate]
 
 Track project closeout deliverables, building systems commissioning, and warranty documentation. Manages closeout status from pre-substantial completion through final closeout and warranty management.
 
+## Skills Referenced
+- `${CLAUDE_PLUGIN_ROOT}/skills/closeout-commissioning/SKILL.md` — Skill documentation
+- `${CLAUDE_PLUGIN_ROOT}/skills/closeout-commissioning/references/closeout-checklist.md` — Master checklist reference
+- `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project information
+- `${CLAUDE_PLUGIN_ROOT}/skills/field-reference/SKILL.md` — System startup sequences
+- `${CLAUDE_PLUGIN_ROOT}/skills/cobie-export/SKILL.md` — COBie export for facility handover (if COBie deliverable is required)
+
 ## Usage
 
 ```
@@ -682,12 +689,6 @@ Generate a professional closeout status report for distribution to owner and PM.
   [TIMESTAMP] | closeout | [sub-action] | [details]
   ```
 - If project data changed significantly, regenerate `CLAUDE.md` to reflect the latest project state
-
-### References:
-- `${CLAUDE_PLUGIN_ROOT}/skills/closeout-commissioning/SKILL.md` — Skill documentation
-- `closeout-checklist.md` — Master checklist reference
-- `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project information
-- `${CLAUDE_PLUGIN_ROOT}/skills/field-reference/SKILL.md` — System startup sequences
 
 ---
 
