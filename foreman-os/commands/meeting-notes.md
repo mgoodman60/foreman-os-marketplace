@@ -11,6 +11,10 @@ Records meeting minutes, captures action items, tracks carry-forward items from 
 
 **Output Skills**: See the `docx` Cowork skill for .docx generation best practices. If available, also read the `docx` Cowork skill for professional Word document formatting guidance when generating meeting minutes documents.
 
+## Skills Referenced
+- `${CLAUDE_PLUGIN_ROOT}/skills/meeting-minutes/SKILL.md` — Meeting types, action item tracking, carry-forward logic
+- `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project configuration and data context
+
 ## Execution Flow
 
 ### Step 1: Load Project Configuration

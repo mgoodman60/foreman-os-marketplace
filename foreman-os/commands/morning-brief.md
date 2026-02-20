@@ -1,7 +1,7 @@
 ---
 description: Get a morning briefing with today's schedule, weather, and carry-forward items
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch
-argument-hint:
+argument-hint: (none — generates briefing for today)
 ---
 
 Generate a morning briefing for the superintendent. Pulls from project intelligence, previous report data, current weather, and MasterFormat best practices to give a quick overview of what to expect today.

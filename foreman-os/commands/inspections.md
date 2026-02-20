@@ -10,6 +10,7 @@ Manage construction inspections and permits throughout the project lifecycle. Sc
 
 ## Skills Referenced
 - `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project configuration and data context
+- `${CLAUDE_PLUGIN_ROOT}/skills/inspection-tracker/SKILL.md` — Inspection scheduling, results logging, re-inspection tracking, and permit management
 
 ## Execution Flow
 

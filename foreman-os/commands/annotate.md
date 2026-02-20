@@ -15,7 +15,7 @@ Construction document annotation and markup for superintendents. Mark up plan sh
 - `${CLAUDE_PLUGIN_ROOT}/skills/document-annotation/references/markup-conventions-guide.md` — Field reference: standard markup symbols, color conventions by discipline, line weight conventions, cloud markup rules, text annotation standards, photo markup conventions, digital tool guidance, markup abbreviations
 - `${CLAUDE_PLUGIN_ROOT}/skills/document-intelligence/SKILL.md` — Document intelligence extraction for auto-generated annotations
 - `${CLAUDE_PLUGIN_ROOT}/skills/project-data/SKILL.md` — Project configuration and data context
-- `${CLAUDE_PLUGIN_ROOT}/skills/rfi-tracker/SKILL.md` — RFI tracking for cross-referencing RFI markups
+- `${CLAUDE_PLUGIN_ROOT}/skills/rfi-preparer/SKILL.md` — RFI tracking for cross-referencing RFI markups
 
 **Output Skills**: See the `docx` Cowork skill for .docx report generation best practices.
 
