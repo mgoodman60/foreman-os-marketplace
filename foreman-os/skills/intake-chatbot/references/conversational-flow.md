@@ -65,7 +65,7 @@ If the user dumps everything at once:
 
 If the user says something like "that's it" or "done for the day":
 
-"All logged. Run /review-log to see the summary, or /daily-report to generate today's report."
+"All logged. Run /daily-report when you're ready — it'll show you a summary first."
 
 ## Photo Handling
 

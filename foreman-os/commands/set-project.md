@@ -261,7 +261,7 @@ Give a numbered action list based on what was actually found:
 
 > **Your Getting-Started Checklist:**
 >
-> 1. Run `/process-docs` — Start with your specs and schedule (highest impact). Then plans. I'll walk you through it. Run `/update` anytime to see what's new in your folders.
+> 1. Run `/process-docs` — Start with your specs and schedule (highest impact). Then plans. I'll walk you through it. Run `/process-docs scan` anytime to see what's new in your folders.
 > 2. Run `/morning-brief` — Once docs are processed, this gives you a daily briefing with weather, schedule, and open items.
 > 3. Run `/log` — Start logging field observations throughout the day. I'll sort them into report sections.
 > 4. Run `/daily-report` — Generate your first daily report when you're ready.

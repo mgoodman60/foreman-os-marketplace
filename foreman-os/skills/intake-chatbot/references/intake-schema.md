@@ -257,7 +257,7 @@ The `linked_hold_point` format matches inspection-tracker's HP-XX pattern. The `
 The summary object is updated after each new entry to give a quick overview of coverage:
 
 - `sections_covered`: which report sections have at least one entry
-- `sections_missing`: which sections have no entries yet (useful for /review-log gap analysis)
+- `sections_missing`: which sections have no entries yet (used for gap analysis during /daily-report generation)
 - `unresolved_entities`: sub names or locations that couldn't be matched to project intelligence
 
 ### Carry-Forward Items

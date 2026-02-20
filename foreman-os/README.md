@@ -31,25 +31,16 @@ Upload your documents once. Everything gets smarter from there.
 #### `/set-project [name]`
 Initialize a new project. Collects project basics and accepts document uploads for deep intelligence extraction. Generates the project memory file (CLAUDE.md) for session continuity.
 
-#### `/update`
-Lightweight folder scan. Compares what's in the project folders against what's already been processed. Reports what's new, what's changed, and what's ready to process. Read-only — doesn't extract or modify anything.
-
-#### `/process-docs [filename or type]`
-Process specific documents to extract intelligence. Point it at a file, a document type, or drag a file into the chat. Classifies automatically, extracts intelligence, and merges with existing project data. Run `/update` first to see what's new.
+#### `/process-docs [filename, type, or "scan"]`
+Process specific documents to extract intelligence. Point it at a file, a document type, or drag a file into the chat. Classifies automatically, extracts intelligence, and merges with existing project data. Use `/process-docs scan` to see what's new or changed in your project folders before processing.
 
 ### Daily Workflow
 
 #### `/morning-brief`
 Start each day with weather, schedule context, approaching milestones, carry-forward items, delivery alerts, pending RFIs, and overdue submittals.
 
-#### `/log [observation]`
-Log field observations throughout the day. Talk naturally — the chatbot handles classification, entity resolution, and enrichment.
-
-#### `/review-log`
-Review everything logged today, organized by report section. Shows coverage gaps before generating the report.
-
-#### `/clear-log`
-Clear today's intake log and start fresh. Archives the cleared entries.
+#### `/log [observation | clear]`
+Log field observations throughout the day. Talk naturally — the chatbot handles classification, entity resolution, and enrichment. Use `/log clear` to archive today's entries and start fresh.
 
 #### `/daily-report [date]`
 Generate a daily report .docx (matching the W Principles template) with optional PDF export. Pulls from the intake log plus any additional input. Runs QA against project intelligence. Pass a past date to backfill.
@@ -89,11 +80,8 @@ Interactive HTML dashboard with Weekly (crew trends, weather, inspections) and P
 
 ### Procurement & Sourcing
 
-#### `/material-tracker [add|status|delivery|verify]`
-Track materials through the full procurement lifecycle. Add items, check status, log deliveries, verify against specs, track certifications.
-
-#### `/find-vendor [material]`
-Search for suppliers. Checks the vendor database first, then offers web search. Saves results for future reference.
+#### `/material-tracker [add|status|delivery|verify|find]`
+Track materials through the full procurement lifecycle. Add items, check status, log deliveries, verify against specs, track certifications. Use `/material-tracker find [material]` to search for vendors and suppliers.
 
 ### Project Closeout
 
@@ -178,12 +166,11 @@ Gather visual context for AI rendering generation. Collects site photos, design 
 2. Run `/set-project` to configure your project and upload key documents
 3. Run `/morning-brief` each morning for your daily context
 4. Use `/log` throughout the day as things happen on site
-5. Run `/review-log` at the end of the day to check coverage
-6. Run `/daily-report` to generate your report
-7. Run `/look-ahead` to plan the next 3 weeks
-8. Run `/process-docs` any time new project docs come in
-9. Run `/dashboard` to see how the project is trending
-10. Run `/weekly-report` at the end of each week for the owner
+5. Run `/daily-report` to generate your report (it'll show a log summary first so you can fill gaps)
+6. Run `/look-ahead` to plan the next 3 weeks
+7. Run `/process-docs` any time new project docs come in (use `/process-docs scan` to check for changes)
+8. Run `/dashboard` to see how the project is trending
+9. Run `/weekly-report` at the end of each week for the owner
 
 ## How Project Intelligence Works
 
