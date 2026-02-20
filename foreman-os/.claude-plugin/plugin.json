@@ -1,8 +1,0 @@
-{
-  "name": "foreman-os",
-  "version": "4.0.2",
-  "description": "Complete construction superintendent operating system — daily reporting, 3-week look-ahead planning, RFI/submittal management, weekly owner reports, material & procurement tracking, interactive dashboards, project closeout & commissioning, and deep document intelligence. v4.0 adds 7 new skills: Contract Administration, Risk Management, Environmental Compliance, Claims Documentation, BIM Coordination, Estimating Intelligence, and Document Annotation. Also adds 12 new field-reference docs (formwork, scaffolding, masonry, waterproofing, utilities, paving, crane lift planning, surveying, temporary facilities, advanced concrete, multi-story coordination, cross-trade coordination) and 12 skill enhancements across last-planner, closeout-commissioning, document-intelligence, quantitative-intelligence, equipment-selection-guide, delay-tracker, pay-application, sub-performance, fire-protection, and MEP coordination. Now includes 41 skills, 36 commands, 21 field-reference documents, and an optional image generation MCP server. All powered by a unified project intelligence layer extracted from your plans, specs, schedules, and contracts.",
-  "author": {
-    "name": "Miles Goodman"
-  }
-}

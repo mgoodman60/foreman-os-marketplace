@@ -3,11 +3,14 @@
   "owner": {
     "name": "Miles Goodman"
   },
+  "metadata": {
+    "description": "Foreman OS construction superintendent plugin for Claude Cowork"
+  },
   "plugins": [
     {
       "name": "foreman-os",
-      "source": "./foreman-os",
-      "description": "Complete construction superintendent operating system — 41 skills, 36 commands, 21 field-reference documents. Daily reporting, 3-week look-ahead planning, RFI/submittal management, weekly owner reports, material tracking, dashboards, closeout/commissioning, and deep document intelligence."
+      "source": "./",
+      "description": "Construction superintendent operating system — 41 skills, 36 commands, and 21 field-reference documents for daily reporting, scheduling, document intelligence, and project management."
     }
   ]
 }

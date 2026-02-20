@@ -9,12 +9,12 @@ This is **foreman-os-marketplace**, a cowork plugin marketplace repository conta
 ## Repository Structure
 
 ```
-.claude-plugin/marketplace.json    — Marketplace manifest (lists plugins)
-foreman-os/                        — The plugin itself
-  .claude-plugin/plugin.json       — Plugin metadata (name, version, description)
-  README.md                        — Full documentation of commands, skills, and data files
-  commands/                        — 36 slash-command definitions (markdown files)
-  skills/                          — 41 skill directories, each with SKILL.md + references/
+.claude-plugin/
+  marketplace.json                 — Marketplace manifest (lists plugins)
+  plugin.json                      — Plugin metadata (name, version, description)
+README.md                          — Full documentation of commands, skills, and data files
+commands/                          — 36 slash-command definitions (markdown files)
+skills/                            — 41 skill directories, each with SKILL.md + references/
 ```
 
 There is no build system, no tests, no package manager. The entire codebase is markdown files, JSON configs, and a few Python reference scripts.
@@ -33,7 +33,7 @@ Commands (in `commands/`) are the user-facing entry points (invoked as `/log`, `
 Example chain: `/log` command → reads `intake-chatbot` skill + `project-data` skill → classifies input → enriches with project intelligence → writes to `daily-report-intake.json`.
 
 ### Key Conventions
-- Commands reference skills via `${CLAUDE_PLUGIN_ROOT}/skills/<skill-name>/SKILL.md` — this variable resolves to the `foreman-os/` directory at runtime
+- Commands reference skills via `${CLAUDE_PLUGIN_ROOT}/skills/<skill-name>/SKILL.md` — this variable resolves to the repository root at runtime
 - Commands also reference cowork platform skills (e.g., `docx`, `pdf`, `construction-takeoff`) for output formatting
 - All project data files are JSON, stored in the user's `AI - Project Brain/` folder (or working directory root as fallback)
 - The `project-data` skill (`skills/project-data/SKILL.md`) is the central data backbone — nearly every command reads it first
@@ -52,8 +52,8 @@ Three Python files exist under `skills/document-intelligence/references/` and `s
 
 ## Editing Patterns
 
-When adding a **new command**: create a markdown file in `foreman-os/commands/` with YAML frontmatter (`description`, `allowed-tools`, `argument-hint`) and step-by-step instructions that reference the relevant skills.
+When adding a **new command**: create a markdown file in `commands/` with YAML frontmatter (`description`, `allowed-tools`, `argument-hint`) and step-by-step instructions that reference the relevant skills.
 
-When adding a **new skill**: create a directory under `foreman-os/skills/<skill-name>/` with a `SKILL.md` (YAML frontmatter with `name`, `description`, `version`) and optionally a `references/` folder for supporting docs or scripts.
+When adding a **new skill**: create a directory under `skills/<skill-name>/` with a `SKILL.md` (YAML frontmatter with `name`, `description`, `version`) and optionally a `references/` folder for supporting docs or scripts.
 
-When modifying the **plugin manifest**: update both `marketplace.json` (root) and `plugin.json` (`foreman-os/.claude-plugin/`) if the description or metadata changes.
+When modifying the **plugin manifest**: update both `marketplace.json` and `plugin.json` in `.claude-plugin/` if the description or metadata changes.
